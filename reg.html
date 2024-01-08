@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <title>Photogry</title>
+  </head>
+  <body
+    class="bg-cover bg-center min-h-screen overflow-hidden"
+    style="background-image: url('/img/bg.jpg')"
+  >
+    <div class="flex flex-col items-center justify-center h-full">
+      <div class="sm:w-full mt-2">
+        <!-- Registration Title -->
+        <h1
+          class="mt-2 text-center text-3xl md:text-5xl sm:text-2xl font-bold leading-9 text-white transition-transform duration-500 transform"
+        >
+          Welcome to Photogram
+        </h1>
+        <!-- Additional Registration Details -->
+      </div>
+
+      <div
+        class="bg-gray-200 rounded-lg shadow-md p-1 mt-6 w-full lg:max-w-4xl backdrop-blur-md backdrop-filter bg-opacity-10 border border-blue-100"
+      >
+        <!-- Header -->
+        <h4
+          class="text-2xl font-semibold sm:text-2xl md:text-4xl lg:text-3xl text-center text-white"
+        >
+          Create an Account
+        </h4>
+
+        <!-- Registration Form -->
+        <div class="mx-auto max-w-7xl space-y-6">
+          <div
+            class="bg-black rounded-lg shadow-md p-6 backdrop-filter bg-opacity-10 transition-all duration-500 space-y-6"
+          >
+            <form class="max-w-full mx-auto" method="post">
+              <!-- Username Input -->
+              <div class="mt-4 relative w-full">
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  autocomplete="username"
+                  required
+                  class="block w-full rounded-md border-2 border-gray-300 py-3 px-4 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600"
+                />
+                <label
+                  for="username"
+                  class="absolute left-3 -top-3 px-2 bg-gradient-to-r from-purple-400 to-pink-500 text-sm text-white font-semibold rounded-md py-1 px-3 shadow-lg"
+                >
+                  Username
+                </label>
+              </div>
+
+              <!-- Email Input  -->
+              <div class="mt-4 relative w-full">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  class="block w-full rounded-md border-2 border-gray-300 py-3 px-4 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600"
+                />
+                <label
+                  for="email"
+                  class="absolute left-3 -top-3 px-2 bg-gradient-to-r from-purple-400 to-pink-500 text-sm text-white font-semibold rounded-md py-1 px-3 shadow-lg"
+                >
+                  Email address
+                </label>
+              </div>
+              <!-- Phone number -->
+              <div class="mt-4 relative w-full">
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  required
+                  class="block w-full rounded-md border-2 border-gray-300 py-3 px-4 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600"
+                />
+                <label
+                  for="phone"
+                  class="absolute left-3 -top-3 px-2 bg-gradient-to-r from-purple-400 to-pink-500 text-sm text-white font-semibold rounded-md py-1 px-3 shadow-lg"
+                >
+                  Phone number
+                </label>
+              </div>
+              <!-- Password Field -->
+              <div class="mt-4 relative">
+                <div class="flex items-center">
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                    class="block w-full rounded-md border-2 border-gray-300 py-3 px-4 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600 pr-10"
+                    onfocus="this.parentElement.classList.add('focus')"
+                    onblur="this.parentElement.classList.remove('focus')"
+                    onkeyup="checkPass()"
+                  />
+                  <label
+                    for="password"
+                    class="absolute top-0 left-3 -mt-3 px-2 bg-gradient-to-r from-purple-400 to-pink-500 text-sm text-white font-semibold rounded-md py-1 px-3 shadow-lg"
+                  >
+                    Password
+                  </label>
+                </div>
+                <!-- Show/Hide Password Icon -->
+                <div
+                  class="absolute top-1/2 transform -translate-y-1/2 right-3"
+                >
+                  <i
+                    id="togglePassword"
+                    class="text-gray-500 cursor-pointer fas fa-eye-slash"
+                  ></i>
+                </div>
+              </div>
+
+              <!-- Confirm Password Field -->
+              <div class="mt-4 relative">
+                <div class="flex items-center">
+                  <input
+                    id="confirm-password"
+                    name="confirm-password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                    class="block w-full rounded-md border-2 border-gray-300 py-3 px-4 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600 pr-10"
+                    onfocus="this.parentElement.classList.add('focus')"
+                    onblur="this.parentElement.classList.remove('focus')"
+                    onkeyup="checkPass()"
+                  />
+                  <label
+                    for="confirm-password"
+                    class="absolute top-0 left-3 -mt-3 px-2 bg-gradient-to-r from-purple-400 to-pink-500 text-sm text-white font-semibold rounded-md py-1 px-3 shadow-lg"
+                  >
+                    Confirm Password
+                  </label>
+                </div>
+                <!-- Show/Hide Password Icon -->
+                <div
+                  class="absolute top-1/2 transform -translate-y-1/2 right-3"
+                >
+                  <i
+                    id="togglecPassword"
+                    class="text-gray-500 cursor-pointer fas fa-eye-slash"
+                  ></i>
+                </div>
+              </div>
+              <!-- alert -->
+              <div class="mt-10 relative">
+                <p
+                  id="password-match"
+                  class="text-lg font-bold mt-2 hidden absolute left-1/2 transform -translate-x-1/2 bottom-0 px-3 py-1"
+                ></p>
+              </div>
+
+              <br />
+              <!-- Sign-up Button -->
+              <div class="flex justify-center">
+                <button
+                  type="submit"
+                  class="w-full max-w-xs rounded-md bg-green-600 px-4 py-1 text-base font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus:outline-none focus:ring focus:border-blue-300 focus:ring-blue-200 focus:ring-opacity-50"
+                >
+                  Sign up
+                </button>
+              </div>
+
+              <p class="mt-4 text-sm text-white text-center">or Signup with</p>
+
+              <!-- Social Media Registration Buttons -->
+              <div class="flex justify-center items-center mt-4">
+                <div class="flex flex-col items-center mr-4">
+                  <div
+                    class="rounded-full h-10 w-10 bg-blue-500 flex items-center justify-center mx-auto mb-2"
+                  >
+                    <i
+                      class="fab fa-google text-white text-2xl inline-block"
+                    ></i>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center">
+                  <div
+                    class="rounded-full h-10 w-10 bg-blue-500 flex items-center justify-center mx-auto mb-2"
+                  >
+                    <i
+                      class="fab fa-facebook-f text-white text-2xl inline-block"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <!-- Already Login -->
+              <div class="mt-1 text-center">
+                <p class="text-sm text-white font-medium">
+                  Already have an account
+                  <a
+                    href="/index.html"
+                    class="text-green-500 font-bold hover:text-indigo-600"
+                    >Login ?</a
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

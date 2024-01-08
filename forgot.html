@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <title>Photogry</title>
+  </head>
+  <body class="bg-cover bg-center min-h-screen overflow-hidden" style="background-image: url('/img/bg.jpg')">
+    <div class="flex flex-col items-center justify-center h-full">
+      <div class="sm:w-full mt-2">
+        <!-- Forgot Password Title -->
+        <h1
+          class="mt-2 text-center text-3xl md:text-5xl sm:text-2xl font-bold leading-9 text-white transition-transform duration-500 transform"
+        >
+          Forgot Password
+        </h1>
+      </div>
+
+      <div
+        class="bg-gray-200 rounded-lg shadow-md p-1 mt-6 w-full lg:max-w-4xl backdrop-blur-md backdrop-filter bg-opacity-10 border border-blue-100"
+      >
+        <!-- Header -->
+        <h4
+          class="text-2xl font-semibold sm:text-2xl md:text-4xl lg:text-3xl text-center text-white"
+        >
+          Reset Your Password
+        </h4>
+
+        <!-- Reset Password Form -->
+        <div class="mx-auto max-w-6xl space-y-6">
+          <div
+            class="bg-black rounded-lg shadow-md p-6 backdrop-filter bg-opacity-10 transition-all duration-500 space-y-6"
+          >
+          <h2
+          class="text-2xl font-semibold sm:text-2xl md:text-4xl lg:text-2xl text-center text-white"
+        >
+        Enter the email address associated with your account and we'll send you to reset your password.
+        </h2>
+            <form class="max-w-full mx-auto" method="post">
+              <!-- Email Input -->
+              <div class="mt-4 relative w-full">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  class="block w-full rounded-md border-2 border-gray-300 py-3 px-4 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600"
+                />
+                <label
+                  for="email"
+                  class="absolute left-3 -top-3 px-2 bg-gradient-to-r from-purple-400 to-pink-500 text-sm text-white font-semibold rounded-md py-1 px-3 shadow-lg"
+                >
+                  Enter your Email
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="mt-4 flex justify-center">
+                <button
+                  type="submit"
+                  class="w-full max-w-xs rounded-md bg-green-600 px-4 py-1 text-base font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus:outline-none focus:ring focus:border-blue-300 focus:ring-blue-200 focus:ring-opacity-50"
+                >
+                  Reset Password
+                </button>
+              </div>
+
+              <!-- Back to Login -->
+              <div class="mt-4 text-center">
+                <p class="text-sm text-white font-medium">
+                  Remembered your password?
+                  <a
+                    href="/index.html"
+                    class="text-green-500 font-bold hover:text-indigo-600"
+                    >Login here</a
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
